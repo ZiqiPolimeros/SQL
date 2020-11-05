@@ -1,0 +1,83 @@
+
+Practice Quiz - Writing Queries
+
+
+1.
+Question 1
+ 
+How many albums does the artist Led Zeppelin have?
+
+
+SELECT COUNT( title), artistID
+FROM albums
+WHERE artistID IN (
+      SELECT artistID
+      FROM artists
+      WHERE name = 'Led Zeppelin'
+      )
+
+
+Question 2
+ 
+Create a list of album titles and the unit prices for the artist "Audioslave".
+ 
+SELECT a.Title, t.UnitPrice
+FROM Albums a, Tracks t
+WHERE t.AlbumId IN
+      (SELECT a.AlbumId
+       FROM Albums a
+       WHERE a.ArtistID IN
+             (SELECT ar.ArtistID
+              FROM Artists ar
+              WHERE ar.Name = 'Audioslave'))
+AND a.AlbumId = t.AlbumId
+
+
+3.
+Question 3
+ 
+Find the first and last name of any customer who does not have an invoice. Are there any customers returned from the query?
+.
+ 
+
+SELECT DISTINCT customerID
+FROM invoices
+WHERE customerID NOT IN (
+      SELECT customerID
+      FROM customers
+       )
+
+
+
+4.
+Question 4
+ 
+Find the total price for each album.
+What is the total price for the album “Big Ones”?
+ 
+SELECT a.Title, t.UnitPrice, sum(t.UnitPrice) as total_price
+FROM Albums a, Tracks t
+WHERE t.AlbumId IN
+      (SELECT a.AlbumId
+       FROM Albums a
+       WHERE a.Title = 'Big Ones')
+AND a.AlbumId = t.AlbumId
++----------+-----------+-------------+
+| Title    | UnitPrice | total_price |
++----------+-----------+-------------+
+| Big Ones |      0.99 |       14.85 |
++----------+-----------+-------------+
+
+ 
+
+5.
+Question 5
+ 
+How many records are created when you apply a Cartesian join to the invoice and invoice items table?
+ 
+
+SELECT  InvoiceLineId, TrackId, UnitPrice, Quantity 
+FROM INVOICE_ITEMS cross join invoices
+
+ 
+

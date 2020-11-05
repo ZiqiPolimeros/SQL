@@ -1,0 +1,178 @@
+Module 3 Quiz
+
+1.
+Question 1
+Which of the following statements is true regarding subqueries?
+
+A. 
+Subqueries always process the outermost query first and the work inward.
+
+B. 
+Subqueries always process the innermost query first and the work outward.
+
+C. 
+Subqueries will process whichever query you indicate for them to process first.
+
+Answer: B
+
+2.
+Question 2
+If you can accomplish the same outcome with a join or a subquery, which one should you always choose?
+
+A. 
+A subquery because they are always faster
+
+B. 
+Joins are usually faster, but subqueries can be more reliable, so it depends on your situation.
+
+C. 
+A join because they are always faster
+
+D. 
+Whichever one you understand better and can write faster.
+
+Answer: B
+
+3.
+Question 3
+The following diagram is a depiction of what type of join?
+ 
+A. 
+Full Outer Join
+
+B. 
+Inner Join
+
+C. 
+Right Join
+
+D. 
+Left Join
+
+Answer: B
+
+4.
+Question 4
+Select which of the following statements are true regarding inner joins. (Select all that apply)
+ 
+A. 
+There is no limit to the number of table you can join with an inner join.
+
+B. 
+Performance will most likely worsen with the more joins you make
+
+C. 
+Inner joins retrieve all matching and nonmatching rows from a table
+
+D. 
+Inner joins are one of the most popular types of joins use
+
+Answer: A.B.D
+
+5.
+Question 5
+Which of the following is true regarding Aliases? (Select all that apply.)
+
+A. 
+Aliases are often used to make column names more readable.
+
+B. 
+SQL aliases are used to give a table, or a column in a table, a temporary name.
+
+C. 
+An alias only exists for the duration of the query.
+
+Answer: A.B.C
+
+6.
+Question 6
+What is wrong with the following query?
+ 
+
+SELECT Customers.CustomerName, Orders.OrderID
+FROM LEFT JOIN ON Customers.CustomerID = Orders.CustomerID FROM Orders AND 
+  Customers
+ORDER BY
+CustomerName;
+
+A. 
+The table name comes after the join condition
+
+B. 
+Should be using an inner join rather than a left join
+
+C. 
+Column names do not have an alias
+
+Answer: A
+
+
+7.
+Question 7
+What is the difference between a left join and a right join?
+ 
+A. 
+A right join is always used before a full outer join, whereas a left join is always used after a full outer join
+
+B. 
+There is actually no difference between a left and a right join.
+
+C. 
+The only difference between a left and right join is the order in which the tables are relating.
+
+D. 
+A left join always is used before a right join in a query statement
+
+Answer: C
+
+
+8.
+Question 8
+If you perform a cartesian join on a table with 10 rows and a table with 20 rows, how many rows will there be in the output table?
+
+A. 
+10
+
+B. 
+20
+
+C. 
+200
+
+D. 
+15
+
+Answer: C
+
+9.
+Question 9
+Which of the following statements about Unions is true? (select all that apply)
+
+A. 
+The columns must also have similar data types
+
+B. 
+The UNION operator is used to combine the result-set of two or more SELECT statements
+
+C. 
+The order of the SELECTed columns in a UNION does not matter
+
+D. 
+Each SELECT statement within UNION must have the same number of columns
+
+Answer: A.B.D
+
+10.
+Question 10
+Data scientists need to use joins in order to: (select the best answer)
+
+A. 
+Filter data from multiple tables.
+ 
+B. 
+Retrieve data from multiple tables.
+
+C. 
+Create new tables.
+
+Answer: B
