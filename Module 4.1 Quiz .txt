@@ -1,0 +1,190 @@
+Module 4 Quiz
+
+
+1.
+Question 1
+Which of the following are supported in SQL when dealing with strings? (Select all that apply)
+
+A. 
+Trim
+
+B. 
+Lower
+
+C. 
+Substring
+
+D. 
+Concatenate
+
+E. 
+Upper
+
+
+Answer: A.B.C.D.E
+
+2.
+Question 2
+What will the result of the following statement be?
+ 
+SELECT SUBSTR('You are beautiful.', 3)
+
+A. 
+This will return an error
+
+B. 
+You are beautiful.
+
+C. 
+beautiful.
+
+D. 
+u are beautiful.
+
+Answer: D
+
+3.
+Question 3
+What are the results of the following query?
+ 
+select * orders
+where order_date = ‘2017-07-15’
+
+Additional information:
+•	Orders = integer
+•	Order_date = datetime
+
+A. 
+You will get all of the orders.
+
+B. 
+You won't get any results.
+
+C. 
+You will get all the orders with an order date of 2017-07-15.
+
+D.
+This query is missing a from statement, so it won't know where to pull the orders from and you'll get an error. See the videos entitled, "Working with Text Strings" and "Working with Date and Time Strings" for more information.
+
+Answer: B
+
+4.
+Question 4
+Case statements can only be used for which of the following statements (select all that apply)?
+
+A. 
+Select
+ 
+B. 
+Insert
+
+C. 
+Update
+
+D. 
+Delete
+
+Answer: A.B.C.D
+
+5.
+Question 5
+Which of the following is FALSE regarding views?
+
+A. 
+Views will remain after the database connection has ended
+
+B. 
+Views can be used to encapsulate queries
+
+C. 
+Views are stored in a query
+
+Answer: A
+
+6.
+Question 6
+You are only allowed to have one condition in a case statement. True or false?
+ 
+Answer: False
+
+
+7.
+Question 7
+Select the correct SQL syntax for creating a view.
+
+A.
+INSERT VIEW customers AS
+Select * 
+FROM customers
+WHERE Name LIKE '%I'
+ 
+ 
+B.
+CREATE VIEW AS
+SELECT * 
+FROM customers
+WHERE Name LIKE '%I'
+ 
+ 
+C.
+CREATE VIEW
+customers AS
+SELECT * 
+FROM customers
+WHERE Name LIKE '%I'
+
+Answer: C
+
+
+
+8.
+Question 8
+Profiling data is helpful for which of the following? (Select all that apply)
+
+A. 
+Joining tables together
+
+B. 
+Understanding your data
+
+C. 
+Filter out unwanted data elements
+
+
+Answer: B.C
+
+
+9.
+Question 9
+What is the most important step before beginning to write queries?
+ 
+A. 
+Deciding what tables you want to join
+
+B. 
+Understanding your data
+
+C. 
+Deciding what should be done on the client application vs the RDMS
+
+Answer: B
+
+
+10.
+Question 10
+When debugging a query, what should you always remember to do first?
+
+A. 
+Start with the inner most query
+
+B. 
+Make sure you didn’t miss any commas.
+
+C. 
+Start simple and break it down first
+ 
+D.
+Start by examining the joins
+
+Answer: C 
+

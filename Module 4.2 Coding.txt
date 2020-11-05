@@ -1,0 +1,97 @@
+Module 4 Coding Questions
+
+1.
+Question 1
+Pull a list of customer ids with the customer’s full name, and address, along with combining their city and country together. Be sure to make a space in between these two and make it UPPER CASE. (e.g. LOS ANGELES USA)
+What is the city and country result for CustomerID 16?
+
+select CustomerId
+, FirstName || ' ' || LastName as Full_Name
+, Address
+, UPPER(City || ' ' || Country)
+from Customers 
+
+ 
+2.
+Question 2
+Create a new employee user id by combining the first 4 letters of the employee’s first name with the first 2 letters of the employee’s last name. Make the new field lower case and pull each individual step to show your work.
+What is the final result for Robert King? 
+
+select FirstName
+, LastName
+, LOWER(substr(FirstName, 1, 4) || substr(LastName,1,2)) as UserID
+from employees
+where firstName = 'Robert' and lastName = 'King'
+
++-----------+----------+--------+
+| FirstName | LastName | UserID |
++-----------+----------+--------+
+| Robert    | King     | robeki |
++-----------+----------+--------+
+
+
+ 
+3.
+Question 3
+Show a list of employees who have worked for the company for 15 or more years using the current date function. Sort by lastname ascending.
+What is the lastname of the last person on the list returned? 
+
+select employeeID, LastName, HireDate, DATE('now') - HireDate as Year
+From employees
+where Year >=15
+order by LastName asc
+
+ 
+4.
+Question 4
+Profiling the Customers table, answer the following question.
+Are there any columns with null values? Indicate any below. Select all that apply.
+
+A. 
+Phone
+
+B. 
+FirstName
+
+C. 
+Address
+
+D. 
+Company
+
+E. 
+Postal Code
+
+F. 
+Fax 
+
+
+select *
+from customers
+where phone is null or firstName is null or address is null or company is null 
+  or postalcode is null or fax is null
+
+
+5.
+Question 5
+Find the cities with the most customers and rank in descending order.
+Which of the following cities indicate having 2 customers?
+
+select city, count(customerID)
+from customers
+group by city
+order by count(customerID) desc
+
+ 
+
+6.
+Question 6
+Create a new customer invoice id by combining a customer’s invoice id with their first and last name while ordering your query in the following order: firstname, lastname, and invoiceID.
+ 
+
+select  c.firstname, c.lastname, i.invoiceID,
+        c.firstname||c.lastname||i.invoiceID AS NewID
+From invoices i, customers c
+where firstname = 'Astrid' and lastname = 'Gruber'
+
+
